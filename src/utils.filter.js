@@ -8,7 +8,7 @@ angular.module('bdt-angular-utils')
       if (angular.isDefined(field)) {
         return _.reduce(_.pluck(obj, field), function(sum, n) {
           var num;
-          num = parseInt(n);
+          num = Number(n);
           if (num) {
             return sum + num;
           } else {
@@ -18,7 +18,7 @@ angular.module('bdt-angular-utils')
       } else {
         return _.reduce(obj, function(sum, n) {
           var num;
-          num = parseInt(n);
+          num = Number(n);
           if (num) {
             return sum + num;
           } else {
@@ -83,5 +83,11 @@ angular.module('bdt-angular-utils')
 .filter('textTransform', function() {
   return function(text) {
     return text.split("_").join(" ").toLowerCase();
+  };
+
+})
+.filter('textToNumber', function() {
+  return function(text) {
+    return Number(text)
   };
 });
