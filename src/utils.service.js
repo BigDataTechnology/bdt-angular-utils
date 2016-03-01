@@ -73,6 +73,79 @@ angular.module('bdt-angular-utils').factory('utils', function($q, toastr, $filte
           cssClass: "white"
         }
       ];
+    },
+
+
+    //Service che effettua il download di un file
+    executeDownload: function(filename, blob) {
+      var URL, a, downloadUrl;
+      if (typeof window.navigator.msSaveBlob !== 'undefined') {
+        return window.navigator.msSaveBlob(blob, filename);
+      } else {
+        URL = window.URL || window.webkitURL;
+        downloadUrl = URL.createObjectURL(blob);
+        a = document.createElement('a');
+        if (typeof a.download === 'undefined') {
+          window.location = downloadUrl;
+        } else {
+          a.href = downloadUrl;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+        }
+        return setTimeout((function() {
+          return URL.revokeObjectURL(downloadUrl);
+        }), 100);
+      }
+    },
+
+    //Service che effettua un SpeechTextTo usando https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html
+    STT: function() {
+      var deferred, recognition;
+      deferred = $q.defer();
+      console.log("STT Start");
+      recognition = new webkitSpeechRecognition;
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.onend = function(e) {
+        return deferred.resolve({
+          transcript: 'no results'
+        });
+      };
+      recognition.onresult = function(e) {
+        console.log("onresult");
+        recognition.onend = null;
+        return deferred.resolve({
+          transcript: e.results[0][0].transcript,
+          confidence: e.results[0][0].confidence
+        });
+      };
+      recognition.start();
+      return deferred.promise;
+    },
+
+    //Service che effettua un TextToSpeech usando https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html
+    TTS: function(text, lang) {
+      var deferred, u, voiceName, voices;
+      deferred = $q.defer();
+      voices = speechSynthesis.getVoices();
+      voiceName = voices.filter(function(voice) {
+        return voice.name === 'Alice';
+      })[0];
+      u = new SpeechSynthesisUtterance;
+      u.text = text;
+      u.voice = voiceName;
+      u.lang = angular.isDefined(lang) ? lang : 'en-US';
+      u.onend = function() {
+        return deferred.resolve();
+      };
+      u.onerror = function(e) {
+        return deferred.resolve(e);
+      };
+      speechSynthesis.speak(u);
+      return deferred.promise;
     }
+
+
   };
 });
