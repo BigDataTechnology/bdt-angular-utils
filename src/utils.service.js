@@ -63,8 +63,8 @@ angular.module('bdt-angular-utils').factory('utils', ["$q", "toastr", "$filter",
           code: "yo-theme-primary",
           cssClass: "primary"
         }, {
-          code: "yo-theme-info",
-          cssClass: "info"
+          code: "yo-theme-violet",
+          cssClass: "violet"
         }, {
           code: "yo-theme-warning",
           cssClass: "warning"

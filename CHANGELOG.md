@@ -1,3 +1,7 @@
+## 0.0.8 (20160302)
+
+* Change yo-theme-info -> yo-theme-violet
+
 ## 0.0.7 (20160302)
 
 * Change for ng-annotate
