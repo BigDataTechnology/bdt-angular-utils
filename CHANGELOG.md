@@ -1,3 +1,7 @@
+## 0.0.7 (20160302)
+
+* Change for ng-annotate
+
 ## 0.0.6 (20160302)
 
 * Fix perc filters

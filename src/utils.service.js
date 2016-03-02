@@ -1,4 +1,4 @@
-angular.module('bdt-angular-utils').factory('utils', function($q, toastr, $filter, allLangObj, $rootScope) {
+angular.module('bdt-angular-utils').factory('utils', ["$q", "toastr", "$filter", "allLangObj", "$rootScope", function($q, toastr, $filter, allLangObj, $rootScope) {
   return {
     createLanguageObj: function(locale) {
       var language;
@@ -148,4 +148,4 @@ angular.module('bdt-angular-utils').factory('utils', function($q, toastr, $filte
 
 
   };
-});
+}]);
