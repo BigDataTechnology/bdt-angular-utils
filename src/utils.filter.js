@@ -56,8 +56,6 @@ angular.module('bdt-angular-utils')
     }
   };
 })
-
-
 .filter('groupBy', function() {
   return _.memoize(function(data, field) {
     return _.groupBy(data, field);
@@ -89,5 +87,13 @@ angular.module('bdt-angular-utils')
 .filter('textToNumber', function() {
   return function(text) {
     return Number(text)
+  };
+})
+// Ritorna il numero passato in input seguito dal simbolo %
+.filter('perc', function() {
+  return function(n) {
+    if(n && isNumber(n)){
+      return n + "%"
+    }
   };
 });
