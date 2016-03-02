@@ -1,3 +1,7 @@
+## 0.0.4 (20160302)
+
+* Add perc filter
+
 ## 0.0.3 (20160301)
 
 * Filters added from tracker
