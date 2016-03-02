@@ -1,3 +1,7 @@
+## 0.0.5 (20160302)
+
+* Fix filters
+
 ## 0.0.4 (20160302)
 
 * Add perc filter
