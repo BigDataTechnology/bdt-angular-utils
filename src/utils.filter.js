@@ -96,8 +96,8 @@ angular.module('bdt-angular-utils')
 // Ritorna il numero passato in input seguito dal simbolo %
 .filter('perc', function() {
   return function(n) {
-    if(n && typeof n == 'number'){
-      return n + "%"
+    if(n){
+      return n.toString() + "%"
     }
   };
 });
