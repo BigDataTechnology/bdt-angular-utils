@@ -1,4 +1,4 @@
-angular.module('bdt-angular-utils').factory('utils', function($q, toastr, $filter, allLangObj, $rootScope) {
+angular.module('bdt-angular-utils').factory('utils', ["$q", "toastr", "$filter", "allLangObj", "$rootScope", function($q, toastr, $filter, allLangObj, $rootScope) {
   return {
     createLanguageObj: function(locale) {
       var language;
@@ -63,8 +63,8 @@ angular.module('bdt-angular-utils').factory('utils', function($q, toastr, $filte
           code: "yo-theme-primary",
           cssClass: "primary"
         }, {
-          code: "yo-theme-info",
-          cssClass: "info"
+          code: "yo-theme-violet",
+          cssClass: "violet"
         }, {
           code: "yo-theme-warning",
           cssClass: "warning"
@@ -148,4 +148,4 @@ angular.module('bdt-angular-utils').factory('utils', function($q, toastr, $filte
 
 
   };
-});
+}]);

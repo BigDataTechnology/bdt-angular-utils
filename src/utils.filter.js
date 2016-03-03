@@ -56,8 +56,6 @@ angular.module('bdt-angular-utils')
     }
   };
 })
-
-
 .filter('groupBy', function() {
   return _.memoize(function(data, field) {
     return _.groupBy(data, field);
@@ -82,12 +80,24 @@ angular.module('bdt-angular-utils')
 })
 .filter('textTransform', function() {
   return function(text) {
-    return text.split("_").join(" ").toLowerCase();
+    if(text) {
+      return text.split("_").join(" ").toLowerCase();
+    }
   };
 
 })
 .filter('textToNumber', function() {
   return function(text) {
-    return Number(text)
+    if(text){
+      return Number(text)
+    }
+  };
+})
+// Ritorna il numero passato in input seguito dal simbolo %
+.filter('perc', function() {
+  return function(n) {
+    if(n){
+      return n.toString() + "%"
+    }
   };
 });
