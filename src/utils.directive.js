@@ -1,11 +1,12 @@
 angular.module("bdt-angular-utils")
+
 .directive("bdtMatch", function(){
   return {
     restrict: 'A',
     require: 'ngModel',
     link: function(scope, ele, attrs, ctrl){
       ctrl.$parsers.unshift(function(val){
-        var cmpVal = scope.$evalr(attrs.bdtMatch)
+        var cmpVal = scope.$eval(attrs.bdtMatch)
         var isValid = val == cmpVal
         ctrl.$setValidity('match', isValid)
         if(isValid) return val
@@ -13,6 +14,7 @@ angular.module("bdt-angular-utils")
     }
   }
 })
+
 .directive("bdtNotIn", function(){
   return {
     restrict: 'A',
