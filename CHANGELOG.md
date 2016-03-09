@@ -1,3 +1,6 @@
+## 0.2.0 (20160309) *** Minor release ***
+
+
 ## 0.0.8 (20160302)
 
 * Change yo-theme-info -> yo-theme-violet
