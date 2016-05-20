@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 
 print_help(){
-  echo "Usage: create_changelog [-sh] TYPE
+  echo "Usage: manage_release_hotfix [-sh] TYPE [FINISHING]
   OPTIONS:
     -h    print this help
-    TYPE is 'major' -> X+1.0.0 or
-            'minor' -> X.Y+1.0 or
-            'patch' -> X.Y.Z+1 or
-            'hotfix' -> X.Y.Z+1
+    TYPE      is 'major' -> X+1.0.0 or
+                 'minor' -> X.Y+1.0 or
+                 'patch' -> X.Y.Z+1 or
+                 'hotfix' -> X.Y.Z+1
+    FINISHING is 'with-finish-release' or
+                 'with-finish-hotfix'
     "
 }
 
