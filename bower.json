@@ -1,11 +1,14 @@
 {
   "name": "bdt-angular-utils",
   "description": "Simple Angular utils",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "license": "MIT",
   "keywords": [
     "angular",
     "angularjs"
+  ],
+  "main": [
+    "./src/*"
   ],
   "authors": [
     "BDT Team <team@bdt.eu.com>",
