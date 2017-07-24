@@ -1,10 +1,19 @@
 {
   "name": "bdt-angular-utils",
-  "version": "0.2.0",
+  "description": "Simple Angular utils",
   "license": "MIT",
-  "main": [
-    "./src/*"
+  "keywords": [
+    "angular",
+    "angularjs"
   ],
+  "authors": [
+    "BDT Team <team@bdt.eu.com>",
+    "Andrea Bresciani <andrea.bresciani@bdt.eu.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BigDataTechnology/bdt-angular-utils.git"
+  },
   "ignore": [
     "bower_components"
   ],
