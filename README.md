@@ -17,10 +17,3 @@ angular.module('appName', [
   'bdt-angular-utils'
 ])
 ```
-
-## Use
-
-```html
-<flag country="us" size="16"></flag>
-<flag country="us" size="32"></flag>
-```
